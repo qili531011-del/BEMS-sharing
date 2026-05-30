@@ -1,8 +1,8 @@
 ---
 layout: home
+title: Introduction
 ---
 
-### Introduction
 
 Welcome to the official website for the IEEE PES Task Force on Building Energy Modeling for Flexible Scheduling.
 
