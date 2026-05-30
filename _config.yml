@@ -4,4 +4,4 @@ description: >
   for Flexible Scheduling in Power Grids.
 baseurl: "/BEMS-sharing"
 markdown: kramdown
-theme: minima
+remote_theme: jekyll/minima
