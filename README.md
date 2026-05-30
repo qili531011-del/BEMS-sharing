@@ -6,14 +6,14 @@ layout: default
 
 Welcome to the official website for the IEEE PES Task Force on Building Energy Modeling for Flexible Scheduling.
 
-This initiative integrates mainstream modeling algorithms and provides standardized workflows bridging BIM and power scheduling.
+This initiative integrates mainstream learning modeling algorithms (such as PINN, LLM-based agents, etc.); 2) Visualize modeling results on both building scale and city scale; 3) Provide a standardized workflow to bridge the semantic gap between BIM and power scheduling algorithm, from data extraction, model training, optimization formulation, and problem solving.
 
 ### Repositories
 
 | Repository | Description |
 |------------|-------------|
-| [Modeling & Dataset](https://github.com/flexgeb-tf/modeling-dataset) | Building footprint, consumption datasets, DER/PV resources |
-| [Simulation](https://github.com/flexgeb-tf/simulation) | Simulation tools and workflows (EnergyPlus, PVsyst, etc.) |
+| [Building Modeling](https://github.com/flexgeb-tf/modeling-dataset) | Building Modeling Methods |
+| [Building Dataset](https://github.com/flexgeb-tf/simulation) | Building Dataset |
 | [Agent](https://github.com/flexgeb-tf/agent) | LLM-based agent for human-interactive modeling |
 
 ### Technical Report
