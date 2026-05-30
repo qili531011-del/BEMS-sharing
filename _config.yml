@@ -4,3 +4,4 @@ description: >
   for Flexible Scheduling in Power Grids.
 baseurl: ""
 markdown: kramdown
+theme: minima
