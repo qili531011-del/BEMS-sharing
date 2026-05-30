@@ -1,2 +1,6 @@
-theme: jekyll-theme-minimal
-title: my BEMS website
+title: "IEEE PES TF - Building Energy Modeling for Flexible Scheduling"
+description: >
+  Official website for the IEEE PES Task Force on Building Energy Modeling
+  for Flexible Scheduling in Power Grids.
+baseurl: ""
+markdown: kramdown
