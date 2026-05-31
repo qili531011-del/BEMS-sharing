@@ -1,67 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>IEEE PES TF - BEMS</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #333; line-height: 1.7; }
 
-    .header {
-      background: linear-gradient(135deg, #1a5276, #2e86c1);
-      color: white;
-      padding: 60px 20px;
-      text-align: center;
+    /* Navbar */
+    .navbar {
+      position: sticky; top: 0; z-index: 100;
+      background: #1a5276;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 60px;
     }
-    .header h1 { font-size: 28px; margin-bottom: 10px; }
-    .header p { font-size: 16px; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+    .navbar-brand { color: #fff; font-size: 17px; font-weight: 700; text-decoration: none; }
+    .navbar-links { display: flex; gap: 28px; }
+    .navbar-links a { color: #d6eaf8; text-decoration: none; font-size: 14px; }
+    .navbar-links a:hover { color: #fff; }
+    .btn-github {
+      display: flex; align-items: center; gap: 6px;
+      border: 1px solid #d6eaf8; color: #fff;
+      padding: 6px 14px; border-radius: 6px;
+      text-decoration: none; font-size: 14px;
+    }
+    .btn-github:hover { background: #2e86c1; }
 
-    .content { max-width: 860px; margin: 0 auto; padding: 40px 20px; }
-    h2 { color: #1a5276; margin: 30px 0 15px; padding-bottom: 8px; border-bottom: 2px solid #e8f0fe; }
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #1a5276, #2e86c1);
+      color: white; text-align: center;
+      padding: 90px 20px 80px;
+    }
+    .hero h1 { font-size: 60px; font-weight: 900; line-height: 1.1; margin-bottom: 18px; }
+    .hero h1 .accent { color: #aed6f1; }
+    .hero p { font-size: 18px; opacity: 0.9; max-width: 620px; margin: 0 auto 36px; }
+    .hero-buttons { display: flex; gap: 14px; justify-content: center; }
+    .btn-primary {
+      background: #fff; color: #1a5276;
+      padding: 12px 26px; border-radius: 6px;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+    }
+    .btn-primary:hover { background: #d6eaf8; }
+    .btn-secondary {
+      background: transparent; color: #fff;
+      border: 1px solid #fff;
+      padding: 12px 26px; border-radius: 6px;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .btn-secondary:hover { background: #1a5276; }
+
+    /* Content */
+    .content { max-width: 900px; margin: 0 auto; padding: 50px 20px; }
+    h2 { color: #1a5276; margin: 40px 0 14px; padding-bottom: 8px; border-bottom: 2px solid #e8f0fe; font-size: 22px; }
+    p { margin-bottom: 12px; }
     a { color: #2e86c1; text-decoration: none; }
     a:hover { text-decoration: underline; }
+    ul { padding-left: 20px; } li { margin: 6px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 14px 0; }
+    th { background: #f0f7ff; padding: 10px 14px; text-align: left; border: 1px solid #e0e0e0; }
+    td { padding: 10px 14px; border: 1px solid #e0e0e0; }
 
-    table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-    th, td { border: 1px solid #e0e0e0; padding: 10px 14px; text-align: left; }
-    th { background: #f0f7ff; font-weight: 600; }
-
-    ul { padding-left: 20px; margin: 10px 0; }
-    li { margin: 6px 0; }
-
-    .footer { text-align: center; padding: 30px; color: #888; font-size: 14px; border-top: 1px solid #eee; margin-top: 40px; }
+    .footer { text-align: center; padding: 28px; color: #888; font-size: 13px; border-top: 1px solid #eee; margin-top: 40px; }
   </style>
 </head>
 <body>
-  <div class="header">
-    <h1>IEEE PES Task Force</h1>
-    <p>Building Energy Modeling for Flexible Scheduling in Power Grids</p>
+
+  <nav class="navbar">
+    <a class="navbar-brand" href="#">IEEE PES TF · BEMS</a>
+    <div class="navbar-links">
+      <a href="#introduction">Introduction</a>
+      <a href="#background">Background</a>
+      <a href="#objectives">Objectives</a>
+      <a href="#repositories">Repositories</a>
+    </div>
+    <a class="btn-github" href="https://github.com/qili531011-del/BEMS-sharing" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+      GitHub
+    </a>
+  </nav>
+
+  <div class="hero">
+    <h1><span class="accent">Building</span> Energy<br>Modeling</h1>
+    <p>Open-Source Learning-Enabled Building Modeling for Flexible Scheduling in Power Grids</p>
+    <div class="hero-buttons">
+      <a class="btn-primary" href="#introduction">Explore the TF</a>
+      <a class="btn-secondary" href="https://github.com/qili531011-del/BEMS-sharing" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+        </svg>
+        GitHub Repositories
+      </a>
+    </div>
   </div>
 
   <div class="content">
-    <h2>Introduction</h2>
+    <h2 id="introduction">Introduction</h2>
     <p>Welcome to the official website for the IEEE PES Task Force on Building Energy Modeling for Flexible Scheduling.</p>
     <p>This initiative integrates mainstream learning modeling algorithms, visualizes modeling results on both building and city scale, and provides a standardized workflow bridging BIM and power scheduling algorithms.</p>
 
-    <h2>Background</h2>
-    <p>The building sector accounts for approximately 30%-40% of global energy consumption and carbon emissions. In the transition of building decarbonization, improving the flexibility of energy scheduling and promote the interaction with power grids will represent a significant role. In the PES Subcommittee on Customer Systems & Smart Buildings, members from different disciplines and domains conducted valuable research and application of flexible scheduling of electricity, heating, cooling, and gas in buildings. In the process of flexible energy scheduling, building modeling is the basis to quantify the capacity of energy generation and consumption. Typical ways of building modeling involve building information modeling (BIM) and building energy modeling (BEM), which generate the digital building prototype and simulate the energy consumption or generation with developed simulation software. However, complex manual adjustment and time-consuming simulation limit the scalable their application in large-scale and heterogeneous buildings. Recent development in deep learning and artificial intelligence has inspired innovative learning-based modeling methods, ranging from physics-informed neural networks to AI agents. A key question is: how can advanced learning methods innovate traditional building modeling fields to support large-scale building-grid interaction? Answering the key question is critical to advancing flexibility of energy scheduling in building and maximizing carbon mitigation potential.<p>
+    <h2 id="background">Background</h2>
+    <p>The building sector accounts for approximately 30%-40% of global energy consumption and carbon emissions. In the transition of building decarbonization, improving the flexibility of energy scheduling and promoting the interaction with power grids will represent a significant role. In the PES Subcommittee on Customer Systems & Smart Buildings, members from different disciplines and domains conducted valuable research and application of flexible scheduling of electricity, heating, cooling, and gas in buildings.</p>
+    <p>Recent development in deep learning and artificial intelligence has inspired innovative learning-based modeling methods, ranging from physics-informed neural networks to AI agents. A key question is: how can advanced learning methods innovate traditional building modeling fields to support large-scale building-grid interaction?</p>
 
-    <h2>Objectives</h2>
-      This task force aims to establish a high-quality, fair, and scalable framework that systematically evaluates building modeling methods. Specifically, this task force will:
+    <h2 id="objectives">Objectives</h2>
+    <p>This task force aims to establish a high-quality, fair, and scalable framework that systematically evaluates building modeling methods. Specifically, this task force will:</p>
     <ul>
-      <li>Provide a survey of the technical route on simulation-based building modeling and identify necessary improvement directions.
-      <li>Build a technology repository in adavanced learning techniques that is potential for building modeling applications, ranging from deep learning methods, physics-informed learning, to LLM-powered agents.
-      <li>Review and categorize open-source datasets that support the applications of various learning techniques.
-      <li>Build use cases in real-world buildings to evaluate the scalable potential of learning-enabled techniques for flexible energy scheduling.
-    <ul>
-    <p>
-      By addressing these objectives, the goal of the task force is to provide the research community with reliable and flexible learning-enabled tools to guide building modeling and decision-making, including:
-    <p>
-    <ul>
-      <li>At the algorithmic level, fostering the discussion across research communities and identifying the future development on learning-enabled techniques.
-      <li>At the application level, providing standards of automatic or human-machine interaction-based pipeline for modern building modeling tasks. 
-      <li>At the platform level, supporting future extension on benchmarking for fair validation of different building modeling methods.
-    <ul>    
-    <h2>Repositories</h2>
+      <li>Provide a survey of the technical route on simulation-based building modeling and identify necessary improvement directions.</li>
+      <li>Build a technology repository in advanced learning techniques, ranging from deep learning methods, physics-informed learning, to LLM-powered agents.</li>
+      <li>Review and categorize open-source datasets that support the applications of various learning techniques.</li>
+      <li>Build use cases in real-world buildings to evaluate the scalable potential of learning-enabled techniques for flexible energy scheduling.</li>
+    </ul>
+
+    <h2 id="repositories">Repositories</h2>
     <table>
       <tr><th>Repository</th><th>Description</th></tr>
       <tr><td><a href="https://github.com/qili531011-del/BEMS-modeling">Building Modeling</a></td><td>Building Modeling Methods (PINN, ML, RC, etc.)</td></tr>
@@ -69,12 +124,13 @@
       <tr><td><a href="https://github.com/qili531011-del/BEMS-agent">Agent</a></td><td>LLM-based agent for human-interactive modeling</td></tr>
     </table>
 
-    <h2>How to Contribute</h2>
+    <h2 id="contribute">How to Contribute</h2>
     <p>We welcome contributions via pull requests. Please see individual repository READMEs for guidelines.</p>
   </div>
 
   <div class="footer">
     &copy; 2025 IEEE PES Task Force on Building Energy Modeling
   </div>
+
 </body>
 </html>
